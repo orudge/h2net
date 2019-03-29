@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>h2</id>
+    <version>1.4.199.0</version>
+    <authors>H2 Group</authors>
+    <owners>Owen Rudge</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>.NET conversion (using IKVM.NET) of the H2 SQL database library.</description>
+	<copyright>Copyright 2004-2019 H2 Group</copyright>
+	<license type="expression">MPL-2.0 OR EPL-1.0</license>
+	<projectUrl>https://github.com/orudge/h2net</projectUrl>
+	<tags>h2 sql database</tags>
+    <dependencies>
+      <dependency id="IKVM" version="[8.1.5717]" />
+    </dependencies>
+  </metadata>
+  
+  <files>
+    <file src="h2.dll" target="lib\net20" />
+  </files>
+</package>
