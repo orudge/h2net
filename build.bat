@@ -3,7 +3,7 @@
 set H2ZIP=http://www.h2database.com/h2-2019-03-13.zip
 set H2Version=1.4.199
 
-set IKVMZIP=http://www.frijters.net/ikvmbin-8.1.5717.0.zip
+set IKVMZIP=https://github.com/ams-ts-ikvm/ikvm-bin/archive/refs/heads/net_core_compat.zip
 set IKVMVersion=8.1.5717.0
 
 set NUGETURL=https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
