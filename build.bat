@@ -1,12 +1,14 @@
 @echo off
 
-set H2ZIP=http://www.h2database.com/h2-2019-03-13.zip
-set H2Version=1.4.199
+@REM 参考权威的的h2.dll，重新编译新版本
+@REM https://github.com/orudge/h2net/blob/master/build.bat
 
-set IKVMZIP=http://www.frijters.net/ikvmbin-8.1.5717.0.zip
+set H2ZIP=https://github.com/h2database/h2database/releases/download/version-2.1.214/h2-2022-06-13.zip
+set H2Version=2.1.214
+
+set IKVMZIP=https://github.com/ikvm-revived/ikvm/releases/download/8.1.5717.0/ikvmbin-8.1.5717.0.zip
 set IKVMVersion=8.1.5717.0
 
-set NUGETURL=https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
 
 mkdir dl
 
@@ -21,7 +23,5 @@ powershell -Command "(New-Object Net.WebClient).DownloadFile('%IKVMZIP%', 'ikvm.
 powershell -Command "Expand-Archive ikvm.zip -DestinationPath dl"
 
 :got_ikvm
-dl\ikvm-%IKVMVersion%\bin\ikvmc -target:library dl\h2\bin\h2-%H2Version%.jar -keyfile:h2.snk -version:%H2Version%.0 -out:h2.dll -assembly:h2
+dl\ikvm-%IKVMVersion%\bin\ikvmc -target:library dl\h2\bin\h2-%H2Version%.jar -version:%H2Version%.0 -out:h2.dll -assembly:h2
 
-powershell -Command "(New-Object Net.WebClient).DownloadFile('%NUGETURL%', 'nuget.exe')"
-nuget pack h2.nuspec
