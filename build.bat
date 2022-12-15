@@ -25,3 +25,5 @@ powershell -Command "Expand-Archive ikvm.zip -DestinationPath dl"
 :got_ikvm
 dl\ikvm-%IKVMVersion%\bin\ikvmc -target:library dl\h2\bin\h2-%H2Version%.jar -version:%H2Version%.0 -out:h2.dll -assembly:h2
 
+powershell -Command "(New-Object Net.WebClient).DownloadFile('%NUGETURL%', 'nuget.exe')"
+nuget pack h2.nuspec
